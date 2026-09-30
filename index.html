@@ -4,66 +4,72 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Zakariae Hasni — Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
-<nav><b>ZH</b><div><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
+<nav><b>Zakariae Hasni</b><div><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
 
 <header>
-<div class="tag">Software Developer</div>
-<h1>Zakariae Hasni</h1>
-<p>I build full-stack web apps, game logic and database-backed software — from inventory systems used by real businesses to AI-driven games.</p>
-<a class="btn b1" href="#projects">View projects</a><a class="btn b2" href="#contact">Get in touch</a>
+<h1>Zakariae <span>Hasni</span></h1>
+<p>Software developer. I build inventory systems, game logic and the databases behind them.</p>
+<a class="btn b1" href="#projects">See my projects</a><a class="btn b2" href="#contact">Contact me</a>
 </header>
 
 <section id="projects">
-<h2>Selected projects</h2>
-<div class="grid">
+<h2>Projects</h2>
 
-<div class="card">
-<h3>StockFlow — Inventory Management</h3>
-<div class="meta">Internship project at Cerdelec · Full-stack web app</div>
-<p>A stock management platform for an industrial electrical parts distributor, replacing manual tracking with a single French-language interface.</p>
+<article class="proj">
+<div><h3>StockFlow</h3><p class="kind">Inventory management for Cerdelec, built during my internship</p></div>
+<div>
+<p>A web app that gives an industrial electrical parts distributor one place to track products, stock movements, purchase orders and delivery notes.</p>
 <ul>
-<li>Products, stock movements, purchase orders (BC) and delivery notes (BL) as separate data flows</li>
-<li>Role-based access control and an activity log for accountability</li>
-<li>Excel and PDF export, printable business documents</li>
-<li>Automated daily database backups via GitHub Actions</li>
+<li>Stock cards that filter the product list by status</li>
+<li>Role-based access and an activity log</li>
+<li>Excel and PDF export, plus printable order and delivery documents</li>
+<li>Automated daily database backups with GitHub Actions</li>
 </ul>
-<div class="chips"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">MongoDB Atlas</span></div>
+<ul class="stack"><li>React</li><li>Vite</li><li>Node.js</li><li>Express</li><li>MongoDB Atlas</li></ul>
 </div>
+<div class="mock" aria-hidden="true">
+<div class="stat" style="--c:var(--ok);--w:82%">Stock OK<i></i></div>
+<div class="stat" style="--c:var(--warn);--w:38%">Faible<i></i></div>
+<div class="stat" style="--c:var(--crit);--w:16%">Critique<i></i></div>
+</div>
+</article>
 
-<div class="card">
-<h3>Jeu de Nim</h3>
-<div class="meta">Desktop game · Python</div>
-<p>A configurable Nim game with four AI difficulty levels, including Minimax and nim-sum strategies, player profiles, a leaderboard and a MySQL-backed statistics dashboard. Ported from Tkinter to Pygame with a custom immediate-mode UI toolkit.</p>
-<div class="chips"><span class="chip">Python</span><span class="chip">Pygame</span><span class="chip">MySQL</span><span class="chip">Minimax</span></div>
+<article class="proj">
+<div><h3>Jeu de Nim</h3><p class="kind">Desktop game in Python</p></div>
+<div>
+<p>A configurable Nim game with four AI difficulty levels, including Minimax and nim-sum strategies. It has player profiles, a leaderboard and a MySQL-backed statistics dashboard. I ported it from Tkinter to Pygame with a custom UI toolkit.</p>
+<ul class="stack"><li>Python</li><li>Pygame</li><li>MySQL</li><li>Minimax</li></ul>
 </div>
+</article>
 
-<div class="card">
-<h3>Chess Engine</h3>
-<div class="meta">Desktop application · C++</div>
-<p>A chess engine with a graphical interface built in C++ and Qt.</p>
-<div class="chips"><span class="chip">C++</span><span class="chip">Qt</span></div>
+<article class="proj">
+<div><h3>Chess engine</h3><p class="kind">Desktop application in C++</p></div>
+<div>
+<p>A chess engine with a graphical interface, written in C++ with Qt.</p>
+<ul class="stack"><li>C++</li><li>Qt</li></ul>
 </div>
-
-</div>
+</article>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
-<div class="grid skills">
-<div class="card"><h3>Web</h3><div class="chips"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Node.js</span><span class="chip">Express</span></div></div>
-<div class="card"><h3>Data</h3><div class="chips"><span class="chip">MongoDB</span><span class="chip">MySQL</span></div></div>
-<div class="card"><h3>Languages</h3><div class="chips"><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">C++</span></div></div>
-<div class="card"><h3>Interests</h3><div class="chips"><span class="chip">Game development</span><span class="chip">AI algorithms</span></div></div>
+<div class="skills">
+<div><h3>Web</h3><p>React, Vite, Node.js, Express</p></div>
+<div><h3>Databases</h3><p>MongoDB, MySQL</p></div>
+<div><h3>Languages</h3><p>JavaScript, Python, C++</p></div>
+<div><h3>Interests</h3><p>Game development, AI algorithms</p></div>
 </div>
 </section>
 
 <section id="contact">
-<h2>Contact</h2>
-<p style="color:var(--muted);margin-top:0">Open to internships and junior developer roles. Let's talk.</p>
+<h2>Let's work together</h2>
+<p>I'm open to internships and junior developer roles.</p>
 <a class="btn b1" href="mailto:you@example.com">Email me</a><a class="btn b2" href="https://github.com/">GitHub</a><a class="btn b2" href="https://www.linkedin.com/">LinkedIn</a>
 </section>
 
