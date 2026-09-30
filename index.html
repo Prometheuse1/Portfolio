@@ -10,13 +10,20 @@
 </head>
 <body>
 <div class="wrap">
-<nav><b>Zakariae Hasni</b><div><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
+<nav><b>Zakariae Hasni</b><div><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
 
 <header>
 <h1>Zakariae <span>Hasni</span></h1>
 <p>Software developer. I build inventory systems, game logic and the databases behind them.</p>
 <a class="btn b1" href="#projects">See my projects</a><a class="btn b2" href="#contact">Contact me</a>
 </header>
+
+<section id="about" class="about">
+<h2>About</h2>
+<p class="lead">I like projects where practical software meets game logic and data.</p>
+<p>At Cerdelec, an industrial electrical parts distributor in Morocco, I co-built StockFlow, a stock management web app that the business can use every day. Outside of work I build games and AI: a Nim game with Minimax opponents and a chess engine in C++.</p>
+<p>I write up the projects I finish and share them on LinkedIn, so what I learn is easy to follow and check.</p>
+</section>
 
 <section id="projects">
 <h2>Projects</h2>
@@ -55,6 +62,39 @@
 <ul class="stack"><li>C++</li><li>Qt</li></ul>
 </div>
 </article>
+</section>
+
+<section id="stockflow">
+<h2>StockFlow in detail</h2>
+<div class="cols">
+<div><h3>The problem</h3><ul>
+<li>Stock, orders and deliveries needed to live in one system</li>
+<li>Purchase orders (BC) and delivery notes (BL) follow French business conventions and must match the company's physical forms</li>
+<li>Staff need to find any product or record fast</li></ul></div>
+<div><h3>What I built</h3><ul>
+<li>Global search that jumps to the exact item and highlights its row</li>
+<li>Editable stock movements that reverse the old stock effect and apply the new one</li>
+<li>Sortable tables and status cards that recalculate with the active filters</li>
+<li>Separate BL and BC data models with printable PDFs</li></ul></div>
+<div><h3>Quality and delivery</h3><ul>
+<li>Fixed layout shift from the alert strip and removed an infinite CSS animation</li>
+<li>Resolved MongoDB TLS connection errors</li>
+<li>Prepared deployment on Render with an environment template</li>
+<li>Flagged database credentials to rotate before making the repository public</li></ul></div>
+</div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<div class="role">
+<div><h3>Software development intern</h3><p class="kind">Cerdelec, Morocco</p></div>
+<ul>
+<li>Co-built StockFlow, a full-stack inventory management app with React, Node.js, Express and MongoDB</li>
+<li>Designed the API and data models for products, movements, orders and delivery notes</li>
+<li>Added role-based login, an activity log and Excel and PDF export</li>
+<li>Set up automated daily database backups delivered by email</li>
+</ul>
+</div>
 </section>
 
 <section id="skills">

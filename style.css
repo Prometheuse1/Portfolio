@@ -44,3 +44,14 @@ h2{font:700 clamp(28px,4vw,40px)/1.1 var(--head);letter-spacing:-.03em;margin:0 
 footer{padding:28px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
 @media(max-width:520px){.mock{grid-template-columns:1fr}nav div a{margin-left:16px}}
 @media(prefers-reduced-motion:reduce){header{animation:none}html{scroll-behavior:auto}}
+.lead{font-size:clamp(20px,2.6vw,26px);line-height:1.45;max-width:30em;margin:0 0 20px;letter-spacing:-.01em}
+.about p{max-width:38em;color:var(--muted);margin:0 0 14px}
+.cols{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.cols h3{font:700 20px var(--head);letter-spacing:-.02em;margin:0 0 10px;padding-top:12px;border-top:3px solid var(--accent)}
+.cols ul{margin:0;padding-left:18px;color:var(--muted)}
+.cols li{margin-bottom:8px}
+.role{display:grid;gap:8px 48px}
+@media(min-width:760px){.role{grid-template-columns:5fr 7fr}}
+.role h3{font:700 24px var(--head);letter-spacing:-.02em;margin:0 0 4px}
+.role ul{margin:0;padding-left:20px}
+.role li{margin-bottom:8px}
