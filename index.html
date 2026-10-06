@@ -16,6 +16,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
 <div class="bg" aria-hidden="true"><div class="floorwrap"><div class="floor"><div class="grid"></div></div></div><div class="cw a"><div class="cube"><span>{ }</span><span>&lt;/&gt;</span><span>SELECT</span><span>async</span><span>git push</span><span>01</span></div></div><div class="cw b"><div class="cube"><span>fn()</span><span>&lt;App /&gt;</span><span>db.find()</span><span>minimax</span><span>npm run</span><span>=&gt;</span></div></div></div>
 <div class="wrap">
 <nav><b>Zakariae Hasni</b><div><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
@@ -168,6 +169,26 @@ function u(){r=0;b.style.setProperty('--px',px);b.style.setProperty('--py',py);b
 function q(){if(!r)r=requestAnimationFrame(u)}
 addEventListener('scroll',q,{passive:true});
 addEventListener('pointermove',function(e){px=(e.clientX/innerWidth-.5)*24;py=(e.clientY/innerHeight-.5)*24;q()},{passive:true})})();
+</script>
+<script>
+(function(){
+var d=document,root=d.documentElement,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var cards=d.querySelectorAll('.proj,.cols>div,.skills>div,.role,.stats li');
+cards.forEach(function(el){el.classList.add('glow')});
+d.addEventListener('pointermove',function(e){var t=e.target.closest&&e.target.closest('.glow');if(!t)return;var r=t.getBoundingClientRect();t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
+var links=d.querySelectorAll('nav a'),secs=d.querySelectorAll('main section');
+if('IntersectionObserver' in window){
+var spy=new IntersectionObserver(function(en){en.forEach(function(x){if(!x.isIntersecting)return;links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id)})})},{rootMargin:'-40% 0px -55% 0px'});
+secs.forEach(function(x){spy.observe(x)});
+if(!rm){
+root.classList.add('js');
+var els=d.querySelectorAll('.about p,.about h2,.proj,.cols>div,.skills>div,.role,.stats li,section>h2');
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});
+els.forEach(function(el){el.classList.add('rv');io.observe(el)});
+}}
+if(!rm){var t=0;function p(){t=0;var h=root.scrollHeight-innerHeight;root.style.setProperty('--p',h>0?Math.min(1,scrollY/h):0)}
+addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(p)},{passive:true});p()}
+})();
 </script>
 </body>
 </html>
