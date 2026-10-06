@@ -3,12 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Zakariae Hasni, software developer. Full-stack web apps with React, Node.js and MongoDB, plus game and AI projects in Python and C++.">
+<meta name="theme-color" content="#070b18">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zakariae Hasni — Software Developer">
+<meta property="og:description" content="Inventory systems, game logic and the databases behind them. Projects, experience and skills.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23070b18'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-size='28' font-weight='800' text-anchor='middle' fill='%237c93ff'%3EZH%3C/text%3E%3C/svg%3E">
 <title>Zakariae Hasni — Software Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="bg" aria-hidden="true"><div class="floorwrap"><div class="floor"><div class="grid"></div></div></div><div class="cw a"><div class="cube"><span>{ }</span><span>&lt;/&gt;</span><span>SELECT</span><span>async</span><span>git push</span><span>01</span></div></div><div class="cw b"><div class="cube"><span>fn()</span><span>&lt;App /&gt;</span><span>db.find()</span><span>minimax</span><span>npm run</span><span>=&gt;</span></div></div></div>
 <div class="wrap">
 <nav><b>Zakariae Hasni</b><div><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
 
@@ -17,6 +25,7 @@
 <p>Software developer. I build inventory systems, game logic and the databases behind them.</p>
 <a class="btn b1" href="#projects">See my projects</a><a class="btn b2" href="#contact">Contact me</a>
 </header>
+<main id="main">
 
 <section id="about" class="about">
 <h2>About</h2>
@@ -31,27 +40,23 @@
 <article class="proj">
 <div><h3>StockFlow</h3><p class="kind">Inventory management for Cerdelec, built during my internship</p></div>
 <div>
-<p>A web app that gives an industrial electrical parts distributor one place to track products, stock movements, purchase orders and delivery notes.</p>
-<ul>
-<li>Stock cards that filter the product list by status</li>
-<li>Role-based access and an activity log</li>
-<li>Excel and PDF export, plus printable order and delivery documents</li>
-<li>Automated daily database backups with GitHub Actions</li>
-</ul>
-<ul class="stack"><li>React</li><li>Vite</li><li>Node.js</li><li>Express</li><li>MongoDB Atlas</li></ul>
-</div>
-<div class="mock" aria-hidden="true">
-<div class="stat" style="--c:var(--ok);--w:82%">Stock OK<i></i></div>
-<div class="stat" style="--c:var(--warn);--w:38%">Faible<i></i></div>
-<div class="stat" style="--c:var(--crit);--w:16%">Critique<i></i></div>
+<p>A web app that gives an industrial electrical parts distributor one place to track products, stock movements, purchase orders and delivery notes. I co-built it with a teammate, with a French interface and the company's branding.</p>
+<ul class="stack"><li>React</li><li>Vite</li><li>Node.js</li><li>Express</li><li>MongoDB Atlas</li><li>Multer</li></ul>
+<p class="more"><a href="#stockflow">Read the case study</a></p>
 </div>
 </article>
 
 <article class="proj">
 <div><h3>Jeu de Nim</h3><p class="kind">Desktop game in Python</p></div>
 <div>
-<p>A configurable Nim game with four AI difficulty levels, including Minimax and nim-sum strategies. It has player profiles, a leaderboard and a MySQL-backed statistics dashboard. I ported it from Tkinter to Pygame with a custom UI toolkit.</p>
-<ul class="stack"><li>Python</li><li>Pygame</li><li>MySQL</li><li>Minimax</li></ul>
+<p>The classic Nim game: take objects from piles and force your opponent to take the last one.</p>
+<ul>
+<li>Configurable pile setup</li>
+<li>Four AI difficulty levels, including Minimax and the nim-sum strategy</li>
+<li>Player profiles, a leaderboard and a statistics dashboard stored in MySQL</li>
+<li>Built first with Tkinter, then rebuilt in Pygame with a small custom widget toolkit and a page state machine</li>
+</ul>
+<ul class="stack"><li>Python</li><li>Pygame</li><li>Tkinter</li><li>MySQL</li><li>Minimax</li></ul>
 </div>
 </article>
 
@@ -100,20 +105,50 @@
 <section id="skills">
 <h2>Skills</h2>
 <div class="skills">
-<div><h3>Web</h3><p>React, Vite, Node.js, Express</p></div>
-<div><h3>Databases</h3><p>MongoDB, MySQL</p></div>
-<div><h3>Languages</h3><p>JavaScript, Python, C++</p></div>
-<div><h3>Interests</h3><p>Game development, AI algorithms</p></div>
+<div><h3>Front end</h3><ul>
+<li>React with Vite</li>
+<li>Filter panels, sortable tables and prefilled edit modals</li>
+<li>Global search that scrolls to the exact record</li></ul></div>
+<div><h3>Back end</h3><ul>
+<li>Node.js and Express REST APIs</li>
+<li>File uploads with Multer</li>
+<li>Role-based access</li></ul></div>
+<div><h3>Databases</h3><ul>
+<li>MongoDB with Mongoose, plus seed data for testing</li>
+<li>MySQL from Python for statistics and leaderboards</li>
+<li>Debugged TLS errors and a corrupted table</li></ul></div>
+<div><h3>Languages</h3><ul>
+<li>JavaScript and JSX</li>
+<li>Python: Tkinter, Pygame, pymysql</li>
+<li>C++ with Qt</li></ul></div>
+<div><h3>Documents and delivery</h3><ul>
+<li>PDF generation with jsPDF and html2canvas</li>
+<li>Excel export</li>
+<li>Scheduled backups with GitHub Actions and nodemailer</li>
+<li>Deployment preparation for Render</li></ul></div>
+<div><h3>Game and AI logic</h3><ul>
+<li>Minimax and the nim-sum strategy</li>
+<li>Custom immediate-mode UI toolkit</li>
+<li>Page state machines</li></ul></div>
 </div>
 </section>
 
 <section id="contact">
 <h2>Let's work together</h2>
-<p>I'm open to internships and junior developer roles.</p>
-<a class="btn b1" href="mailto:you@example.com">Email me</a><a class="btn b2" href="https://github.com/">GitHub</a><a class="btn b2" href="https://www.linkedin.com/">LinkedIn</a>
+<p>I'm open to internships and junior developer roles. You can reach me at <a href="mailto:thefivevectors@gmail.com">thefivevectors@gmail.com</a>.</p>
+<a class="btn b1" href="mailto:thefivevectors@gmail.com">Email me</a><a class="btn b2" href="https://github.com/Prometheuse1" rel="noopener">GitHub</a><a class="btn b2" href="https://www.linkedin.com/in/zakariae-hasni/" rel="noopener">LinkedIn</a>
 </section>
+
+</main>
 
 <footer>© 2026 Zakariae Hasni</footer>
 </div>
+<script>
+(function(){var b=document.querySelector('.bg');if(!b||matchMedia('(prefers-reduced-motion:reduce)').matches)return;var r=0,px=0,py=0;
+function u(){r=0;b.style.setProperty('--px',px);b.style.setProperty('--py',py);b.style.setProperty('--sy',scrollY)}
+function q(){if(!r)r=requestAnimationFrame(u)}
+addEventListener('scroll',q,{passive:true});
+addEventListener('pointermove',function(e){px=(e.clientX/innerWidth-.5)*24;py=(e.clientY/innerHeight-.5)*24;q()},{passive:true})})();
+</script>
 </body>
 </html>
