@@ -18,11 +18,12 @@
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" aria-hidden="true"></div>
 <div class="bg" aria-hidden="true"><div class="floorwrap"><div class="floor"><div class="grid"></div></div></div><div class="cw a"><div class="cube"><span>{ }</span><span>&lt;/&gt;</span><span>SELECT</span><span>async</span><span>git push</span><span>01</span></div></div><div class="cw b"><div class="cube"><span>fn()</span><span>&lt;App /&gt;</span><span>db.find()</span><span>minimax</span><span>npm run</span><span>=&gt;</span></div></div></div>
-<div class="wrap">
-<nav><b>Zakariae Hasni</b><div><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
+<div class="wrap" id="top">
+<nav aria-label="Main"><b>Zakariae Hasni</b><div><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero">
 <div>
+<p class="badge"><span class="dot" aria-hidden="true"></span>Open to internships and junior roles</p>
 <h1>Zakariae <span>Hasni</span></h1>
 <p>Software developer. I build inventory systems, game logic and the databases behind them.</p>
 <a class="btn b1" href="#projects">See my projects</a><a class="btn b2" href="#contact">Contact me</a>
@@ -155,13 +156,16 @@
 
 <section id="contact">
 <h2>Let's work together</h2>
-<p>I'm open to internships and junior developer roles. You can reach me at <a href="mailto:thefivevectors@gmail.com">thefivevectors@gmail.com</a>.</p>
-<a class="btn b1" href="mailto:thefivevectors@gmail.com">Email me</a><a class="btn b2" href="https://github.com/Prometheuse1" rel="noopener">GitHub</a><a class="btn b2" href="https://www.linkedin.com/in/zakariae-hasni/" rel="noopener">LinkedIn</a>
+<div class="cta">
+<p>I'm open to internships and junior developer roles. The quickest way to reach me is by email.</p>
+<p class="mail"><a href="mailto:thefivevectors@gmail.com">thefivevectors@gmail.com</a></p>
+<a class="btn b1" href="mailto:thefivevectors@gmail.com">Email me</a><button class="btn b2" type="button" id="copy" data-mail="thefivevectors@gmail.com">Copy email</button><a class="btn b2" href="https://github.com/Prometheuse1" rel="noopener">GitHub</a><a class="btn b2" href="https://www.linkedin.com/in/zakariae-hasni/" rel="noopener">LinkedIn</a>
+</div>
 </section>
 
 </main>
 
-<footer>© 2026 Zakariae Hasni</footer>
+<footer><span>© 2026 Zakariae Hasni</span><a href="#top">Back to top</a></footer>
 </div>
 <script>
 (function(){var b=document.querySelector('.bg');if(!b||matchMedia('(prefers-reduced-motion:reduce)').matches)return;var r=0,px=0,py=0;
@@ -178,8 +182,6 @@ cards.forEach(function(el){el.classList.add('glow')});
 d.addEventListener('pointermove',function(e){var t=e.target.closest&&e.target.closest('.glow');if(!t)return;var r=t.getBoundingClientRect();t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
 var links=d.querySelectorAll('nav a'),secs=d.querySelectorAll('main section');
 if('IntersectionObserver' in window){
-var spy=new IntersectionObserver(function(en){en.forEach(function(x){if(!x.isIntersecting)return;links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id)})})},{rootMargin:'-40% 0px -55% 0px'});
-secs.forEach(function(x){spy.observe(x)});
 if(!rm){
 root.classList.add('js');
 var els=d.querySelectorAll('.about p,.about h2,.proj,.cols>div,.skills>div,.role,.stats li,section>h2');
@@ -188,7 +190,23 @@ els.forEach(function(el){el.classList.add('rv');io.observe(el)});
 }}
 if(!rm){var t=0;function p(){t=0;var h=root.scrollHeight-innerHeight;root.style.setProperty('--p',h>0?Math.min(1,scrollY/h):0)}
 addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(p)},{passive:true});p()}
+var map={stockflow:'projects'},cur='',tk=0;
+function setOn(id){if(id===cur)return;cur=id;links.forEach(function(a){var on=a.getAttribute('href')==='#'+id;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+function spy(){tk=0;var line=innerHeight*.3,id='';
+secs.forEach(function(x){if(x.getBoundingClientRect().top<=line)id=x.id});
+if(innerHeight+scrollY>=root.scrollHeight-4&&secs.length)id=secs[secs.length-1].id;
+setOn(map[id]||id)}
+function q(){if(!tk)tk=requestAnimationFrame(spy)}
+addEventListener('scroll',q,{passive:true});addEventListener('resize',q);
+links.forEach(function(a){a.addEventListener('click',function(){var h=a.getAttribute('href');if(h&&h.charAt(0)==='#')setOn(h.slice(1))})});
+spy();
 })();
+</script>
+<script>
+(function(){var b=document.getElementById('copy');if(!b)return;var l=b.textContent;
+b.addEventListener('click',function(){var m=b.getAttribute('data-mail');
+function ok(){b.textContent='Copied';setTimeout(function(){b.textContent=l},1800)}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(ok,function(){b.textContent=m})}else{b.textContent=m}})})();
 </script>
 </body>
 </html>

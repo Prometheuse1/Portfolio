@@ -140,3 +140,25 @@ nav a.on{color:#3ee6ff}
 .js .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.progress{display:none}.js .rv{opacity:1;transform:none}}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+
+.badge{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:rgba(14,20,42,.7);font:500 13px "IBM Plex Mono",ui-monospace,monospace;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:#1e9e6a;box-shadow:0 0 0 0 rgba(30,158,106,.6);animation:pulse 2s ease-out infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(30,158,106,0)}100%{box-shadow:0 0 0 0 rgba(30,158,106,0)}}
+.proj>div:last-child>:last-child{margin-bottom:0}
+.cta{padding:36px;border:1px solid var(--line);border-radius:16px;background:radial-gradient(520px circle at 100% 0,rgba(62,230,255,.1),transparent 60%),rgba(14,20,42,.7)}
+#contact .cta p{max-width:30em}
+#contact .cta p.mail{font:500 clamp(18px,3.2vw,26px) "IBM Plex Mono",ui-monospace,monospace;margin:0 0 28px;overflow-wrap:anywhere}
+#contact .cta p.mail a{color:#3ee6ff;text-decoration:none;border-bottom:1px solid rgba(62,230,255,.4)}
+#contact .cta p:first-child{margin-bottom:16px}
+button.btn{font-family:inherit;background:transparent;color:var(--ink);cursor:pointer}
+button.b2:hover{background:var(--ink);color:var(--bg)}
+footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:#3ee6ff}
+@media(max-width:520px){.cta{padding:24px}}
+@media(prefers-reduced-motion:reduce){.dot{animation:none}}
+
+.proj{--pad:32px;overflow:hidden}
+.proj::before{left:0;right:0}
+@media(max-width:520px){.proj,.proj:first-of-type{--pad:22px}.proj::before{left:0;right:0}}
+.proj::before{background:linear-gradient(90deg,transparent,var(--accent) 30%,#3ee6ff 70%,transparent)}
